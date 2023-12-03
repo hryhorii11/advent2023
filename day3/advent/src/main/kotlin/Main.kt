@@ -53,7 +53,7 @@ fun task2(list: ArrayList<String>) {
                 for (j in m.range.first - 1..m.range.last + 1) {
                     if (k >= 0 && j >= 0 && k < list.size && j < list[k].length) {
                         if (list[k][j].isDigit()) {
-                            val temp = finNum(j, list[k])
+                            val temp = findNum(j, list[k])
                             if (num != temp) {
                                 sum += (parseInt(num) * parseInt(temp))
                             }
@@ -70,7 +70,7 @@ fun task2(list: ArrayList<String>) {
     println(sum)
 }
 
-fun finNum(i: Int, s: String): String {
+fun findNum(i: Int, s: String): String {
     var index = i
     var num = ""
     while (index - 1 >= 0 && s[index - 1].isDigit()) {
