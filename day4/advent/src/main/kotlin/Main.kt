@@ -42,13 +42,13 @@ fun task2(list: ArrayList<String>) {
     for (line in list) {
         val winNumbers = Regex("\\d+").findAll(line.substring(line.indexOf(':'), line.indexOf('|')))
         val myNumbers = Regex("\\d+").findAll(line.substring(line.indexOf('|')))
-        var b = 0
+        var matchNumbersCount = 0
         for (n1 in winNumbers) {
             for (n2 in myNumbers) {
                 if (n1.value.equals(n2.value)) {
                     for (i in 0..cardList[list.indexOf(line)] - 1)
-                        cardList[list.indexOf(line) + b + 1]++
-                    b++
+                        cardList[list.indexOf(line) + matchNumbersCount + 1]++
+                    matchNumbersCount++
                 }
             }
         }
